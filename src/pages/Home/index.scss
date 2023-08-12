@@ -1,0 +1,14 @@
+.home{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+.home_top{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 110px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+}
