@@ -7,11 +7,21 @@ function Side() {
         navigate(e.key);
     };
     const key = window.location.pathname;
+    const siderStyle = {
+        textAlign: '',
+
+        backgroundColor: '#fff',
+        with: '220px',
+        maxWidth: '220px',
+        minWidth: '220px',
+    };
     return (
         <>
             <div>
                 <Menu
+                    style={siderStyle}
                     mode="inline"
+                    selectable={true}
                     defaultSelectedKeys={[key]}
                     defaultOpenKeys={[key]}
                     items={router}

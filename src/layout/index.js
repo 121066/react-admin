@@ -1,5 +1,6 @@
 import { Layout } from 'antd';
 import Contents from './Content';
+// import { Outlet } from 'react-router-dom';
 import Headers from './Header';
 import Side from './Side';
 import './index.scss';
@@ -14,7 +15,7 @@ const headerStyle = {
 };
 const contentStyle = {
     backgroundColor: '#eee',
-    padding: '12px',
+    padding: '8px',
 };
 const siderStyle = {
     textAlign: '',
@@ -42,6 +43,7 @@ function Layouts() {
                         <Side></Side>
                     </Sider>
                     <Content style={contentStyle}>
+                        {/* <Outlet></Outlet> */}
                         <Contents></Contents>
                     </Content>
                 </Layout>

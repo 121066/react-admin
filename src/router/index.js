@@ -1,8 +1,10 @@
+import { ContainerOutlined } from '@ant-design/icons';
 import { lazy } from 'react';
 export const router = [
     {
         label: '首页',
         key: '/home',
+        icon: <ContainerOutlined />,
         component: lazy(() => import('../pages/Home')),
     },
     {
