@@ -20,6 +20,7 @@
     "tailwindcss": "^3.3.2"
   },
   "scripts": {
+     "start1": "react-scripts start ",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",

@@ -1,5 +1,10 @@
-const { override, adjustStyleLoaders } = require('customize-cra');
-const webpack = require('webpack');
+const {
+    override,
+    adjustStyleLoaders,
+    // addWebpackAlias,
+} = require('customize-cra')
+// const path = require('path');
+const webpack = require('webpack')
 module.exports = {
     webpack: override(
         adjustStyleLoaders((rule) => {
@@ -9,8 +14,11 @@ module.exports = {
                     options: {
                         resources: ['./src/style/index.scss'],
                     },
-                });
+                })
             }
         }),
+        // addWebpackAlias({
+        //     '@': path.resolve('./src'),
+        // }),
     ),
-};
+}
