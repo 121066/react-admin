@@ -1,13 +1,14 @@
 import { useReducer } from 'react'
-// import dictReducer from './dict'
-
+// import { useState } from 'react'
+import dictReducer from './dict'
 export default function TaskList() {
     const initialTasks = [
         { id: 1, text: '部门', flag: false },
         { id: 2, text: '小组', flag: false },
     ]
-    const [tasks, dispatch] = useReducer(() => {}, [{ a: 1 }])
-
+    // const [count, setCount] = useState(0)
+    const [tasks, dispatch] = useReducer(dictReducer, initialTasks)
+    console.log(tasks, 'tasks')
     const handleAddTask = () => {
         dispatch({
             type: 'added',
