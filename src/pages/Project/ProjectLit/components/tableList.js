@@ -1,5 +1,7 @@
 import { Table } from 'antd'
-function TableList() {
+import { memo, useMemo, useState } from 'react'
+function TableList(props) {
+    const { dataList } = props
     const status = {
         1: '未开始',
         2: '已完成',
@@ -16,9 +18,12 @@ function TableList() {
         { title: '责任人', dataIndex: 'authName' },
         { title: '创建时间', dataIndex: 'crdate' },
     ]
-    const data = []
-
-    for (let i = 0; i < 20; i++) {
+    const [data, setData] = useState({})
+    const list = useMemo(() => {
+        return props.dataList
+    }, [props.dataList])
+    let arr = []
+    for (let i = 0; i < 5; i++) {
         let obj = {
             key: i,
             taskName: '派工任务' + i,
@@ -26,8 +31,10 @@ function TableList() {
             crdate: '2023-10-07',
             status: i % 2 === 0 ? 1 : 2,
         }
-        data.push(obj)
+        arr.push(obj)
     }
+    // setData(list)
+    // data.push(list)
     const onChange = (pagination, filters, sorter, extra) => {
         // console.log('params', pagination, filters, sorter, extra)
     }
@@ -36,11 +43,11 @@ function TableList() {
             <div>
                 <Table
                     columns={columns}
-                    dataSource={data}
+                    dataSource={[...arr]}
                     onChange={onChange}
                 ></Table>
             </div>
         </>
     )
 }
-export default TableList
+export default memo(TableList)
