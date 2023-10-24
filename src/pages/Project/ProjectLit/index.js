@@ -1,11 +1,16 @@
-import { useState } from 'react'
+import { getGoodslist } from '@/api/index.js'
+import { useEffect, useState } from 'react'
 import AddTask from './components/addTask'
 import FormSearch from './components/formSearch'
 import TableList from './components/tableList'
 import './index.scss'
 function ProjectList(params) {
     const [dataList, setDataList] = useState({})
-
+    console.log(params)
+    useEffect(async () => {
+        let data = await getGoodslist()
+        console.log(data, 'data')
+    }, [])
     return (
         <>
             <div>

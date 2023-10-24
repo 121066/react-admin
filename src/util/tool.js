@@ -11,7 +11,7 @@ export const gray = (r, g, b) => 0.2126 * r + 0.7152 * g + 0.0722 * b
 // gray(50,100,150)
 //解析Url中的参数
 export const parseQuery = (url) => {
-    q = {}
+    let q = {}
     url.replace(/([^?&=]+)=([^&]+)/g, (_, k, v) => (q[k] = v))
     return q
 }

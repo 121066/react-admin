@@ -1,4 +1,4 @@
-import request from '../util/axios';
+import request from '../util/axios'
 /**
  *  下载文件流
  */
@@ -8,5 +8,12 @@ export function getFile(params) {
         method: 'get',
         params,
         responseType: 'blob',
-    });
+    })
+}
+export function getGoodslist(params) {
+    return request({
+        url: '/goods',
+        method: 'post',
+        data: { type: 0 },
+    })
 }

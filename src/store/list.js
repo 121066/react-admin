@@ -1,2 +1,2 @@
-import {createContext} from 'react'
-export default ListIndex=createContext(0)
+import { createContext } from 'react'
+export const ListIndex = createContext(0)
