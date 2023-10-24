@@ -36,7 +36,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
-    "style-lint": "stylelint 'src/**/*.css' --fix"
+    "style-lint": "stylelint 'src/**/*.css' --fix",
+    "eslint":"eslint --fix"
   },
   "browserslist": {
     "production": [
