@@ -5,7 +5,7 @@ import TableList from './components/tableList'
 import './index.scss'
 function ProjectList(params) {
     const [dataList, setDataList] = useState({})
-    console.log('来了')
+
     return (
         <>
             <div>
