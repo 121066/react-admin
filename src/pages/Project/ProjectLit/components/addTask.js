@@ -19,9 +19,6 @@ function AddTask(props) {
     const getSetForm = (e) => {
         // setAddForm(e)
     }
-    // let i = 0
-    // let i1 = 2
-    // i == i1
     const { Option } = Select
     // const { onReset } = props
     const onFinish = (values) => {
