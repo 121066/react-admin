@@ -18,7 +18,6 @@ function AddTask(props) {
     const [addForm, setAddForm] = useState({})
     const getSetForm = (e) => {
         // setAddForm(e)
-        console.log(e)
     }
     const { Option } = Select
     // const { onReset } = props
