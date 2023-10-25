@@ -1,14 +1,22 @@
-import { Button, Col, DatePicker, Form, Input, Row, Select, Space } from 'antd';
-function FormSearch() {
-    const { Option } = Select;
-    const [form] = Form.useForm();
+import { Button, Col, DatePicker, Form, Input, Row, Select, Space } from 'antd'
+import { forwardRef, useImperativeHandle } from 'react'
+function FormSearch(props, ref) {
+    const { Option } = Select
+    const [form] = Form.useForm()
     //重置
     const onReset = () => {
-        form.resetFields();
-    };
+        form.resetFields()
+    }
     const onFinish = (e) => {
-        console.log(e, '数据');
-    };
+        console.log(e, '数据')
+    }
+    useImperativeHandle(ref, () => ({
+        init,
+        form,
+    }))
+    const init = () => {
+        console.log('点击自杜建')
+    }
     return (
         <>
             <div>
@@ -78,6 +86,6 @@ function FormSearch() {
                 </Form>
             </div>
         </>
-    );
+    )
 }
-export default FormSearch;
+export default forwardRef(FormSearch)

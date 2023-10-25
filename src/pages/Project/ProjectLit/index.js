@@ -1,22 +1,36 @@
-import { getGoodslist } from '@/api/index.js'
-import { useEffect, useState } from 'react'
+// import { getGoodslist } from '@/api'
+import { useEffect, useRef, useState } from 'react'
+
+import { Button } from 'antd'
 import AddTask from './components/addTask'
 import FormSearch from './components/formSearch'
 import TableList from './components/tableList'
 import './index.scss'
 function ProjectList(params) {
     const [dataList, setDataList] = useState({})
-    console.log(params)
-    useEffect(async () => {
-        let data = await getGoodslist()
-        console.log(data, 'data')
-    }, [])
+    // console.log(params)
+    const formSearch = useRef(null)
+    useEffect(() => {
+        const getList = async () => {
+            // let data = await getGoodslist()
+            // console.log(data, 'data')
+            console.log(formSearch, 'formSearch')
+        }
+        getList()
+    })
+    const addBtn = () => {
+        // console.log(formSearch.current)
+        formSearch.current.init()
+        const from = formSearch.current.form.submit()
+        console.log(from, 'from')
+    }
     return (
         <>
             <div>
-                <FormSearch></FormSearch>
+                <FormSearch ref={formSearch}></FormSearch>
                 <AddTask onAdd={setDataList}></AddTask>
                 <TableList dataList={dataList}></TableList>
+                <Button onClick={addBtn}>点击</Button>
             </div>
         </>
     )

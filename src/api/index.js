@@ -12,7 +12,7 @@ export function getFile(params) {
 }
 export function getGoodslist(params) {
     return request({
-        url: '/goods',
+        url: 'http://127.0.0.1:8080/goods',
         method: 'post',
         data: { type: 0 },
     })

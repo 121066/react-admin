@@ -1,26 +1,26 @@
-import axios from 'axios';
+import axios from 'axios'
 // const request = axios.create({
 //     BaseUrl: '',
 //     timeout: 2000,
 // });
-const request = axios;
+const request = axios
 request.interceptors.request.use((config) => {
-    return config;
-});
+    return config
+})
 request.interceptors.response.use(
     (response) => {
-        console.log(response);
+        console.log(response)
         if (Object.keys(response['headers']).includes('content-disposition')) {
             const fileName = response['headers']['content-disposition']
                 .split(';')[1]
-                .split('filename=')[1];
+                .split('filename=')[1]
             const res = {
                 fileName: decodeURIComponent(fileName),
                 data: response.data,
-            };
-            return res;
+            }
+            return res
         }
-        return response.data;
+        return response.data
         // return response.data;
         // if (!Object.keys(response.headers).includes('report-download')) {
         //     if (Object.keys(response.headers).includes('content-disposition')) {
@@ -40,7 +40,7 @@ request.interceptors.response.use(
         // }
     },
     (err) => {
-        return new Promise(err);
+        return new Promise(err)
     },
-);
-export default request;
+)
+export default request
