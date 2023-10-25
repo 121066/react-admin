@@ -9,10 +9,12 @@ function FormSearch(props, ref) {
     }
     const onFinish = (e) => {
         console.log(e, '数据')
+        return e
     }
     useImperativeHandle(ref, () => ({
         init,
         form,
+        onFinish,
     }))
     const init = () => {
         console.log('点击自杜建')
