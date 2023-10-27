@@ -24,6 +24,9 @@ function ProjectList(params) {
         const from = formSearch.current.form.submit()
         console.log(from, 'from')
     }
+    function addClickBtn(e) {
+        console.log('来了')
+    }
     return (
         <>
             <div>
@@ -31,6 +34,7 @@ function ProjectList(params) {
                 <AddTask onAdd={setDataList}></AddTask>
                 <TableList dataList={dataList}></TableList>
                 <Button onClick={addBtn}>点击</Button>
+                <Button onClick={() => addBtn()}>函数</Button>
             </div>
         </>
     )
