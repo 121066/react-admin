@@ -2,6 +2,7 @@
   "name": "react-admin",
   "version": "0.1.0",
   "private": true,
+  "main": "./main.js",
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
     "antd": "^5.6.1",
@@ -9,6 +10,7 @@
     "cors": "^2.8.5",
     "cra-template": "1.2.0",
     "customize-cra": "^1.0.0",
+    "electron": "^27.0.3",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "express": "^4.18.2",
@@ -37,7 +39,9 @@
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "style-lint": "stylelint 'src/**/*.css' --fix",
-    "eslint": "eslint src --ext .js,.jsx,.ts,.tsx --fix"
+    "eslint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "electron": "electron .",
+    "packager": "electron-packager ./ App --platform=win32 --arch=x64 --overwrite"
   },
   "browserslist": {
     "production": [
@@ -72,6 +76,7 @@
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "axios": "^1.4.0",
+    "electron-packager": "^17.1.2",
     "eslint": "^8.52.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.0",
